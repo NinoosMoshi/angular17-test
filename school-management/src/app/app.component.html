@@ -1,0 +1,29 @@
+<h2 class="d-flex align-items-center justify-content-center">
+  {{ project_title }}
+</h2>
+
+<div class="container d-flex align-items-center justify-content-center">
+  <!-- <ng-container *ngFor="let course of courses">
+    <app-course-card (viewCourseEvent)="showEvent($event)" [course]="course" />
+  </ng-container> -->
+
+  @for (course of courses; track course.id; let index=$index; let count=$count;
+  let first=$first; let last=$last; let even=$even; let odd=$odd) {
+  <ng-container>
+    <app-course-card
+      (viewCourseEvent)="showEvent($event)"
+      [course]="course"
+      [tempIndex]="index"
+    />
+  </ng-container>
+  <span
+    [class.firstClass]="first"
+    [class.lastClass]="last"
+    [class.evenClass]="even"
+    [class.oddClass]="odd"
+    >Course Count : {{ count }}</span
+  >
+  }@empty {
+  <h1>There no courses found</h1>
+  }
+</div>

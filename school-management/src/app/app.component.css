@@ -1,0 +1,15 @@
+.firstClass {
+  color: red;
+}
+
+.lastClass {
+  color: green;
+}
+
+.evenClass {
+  font-weight: bold;
+}
+
+.oddClass {
+  font-weight: 100;
+}
